@@ -1,0 +1,45 @@
+﻿@using CarInsurance.ViewModels
+@model List<QuoteVm>
+
+<div class="row no-gutters m-3">
+    <div class="card col mx-auto shadow">
+        <div class="card-header text-center">
+            <h3 class="m-0">Here are all the Quotes!</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h5>First Name</h5>
+                </div>
+                <div class="col">
+                    <h5>Last Name</h5>
+                </div>
+                <div class="col">
+                    <h5>Email</h5>
+                </div>
+                <div class="col">
+                    <h5>Quote</h5>
+                </div>
+            </div>
+            @foreach (var quote in Model)
+            {
+            <div class="row">
+                <div class="col">
+                    <span>@quote.FirstName</span> 
+                </div>
+                <div class="col">
+                    <span>@quote.LastName</span>
+                </div>
+                <div class="col">
+                    <span>@quote.EmailAddress</span>
+                </div>
+                <div class="col">
+                    <span>$@Math.Round(quote.QuoteAmount, 2)</span>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+
